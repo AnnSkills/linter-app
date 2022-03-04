@@ -941,7 +941,7 @@
                                 <url>jdbc:mysql://localhost:3306/linter</url>
                                 <defaultSchemaName>linter</defaultSchemaName>
                                 <username>root</username>
-                                <password></password>
+                                <password>12345678</password>
                                 <referenceUrl>hibernate:spring:com.bsuir.annapp.domain?dialect=org.hibernate.dialect.MySQL8Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
                                 <verbose>true</verbose>
                                 <logging>debug</logging>
@@ -1061,10 +1061,10 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <plugin>
-                        <groupId>io.github.git-commit-id</groupId>
-                        <artifactId>git-commit-id-maven-plugin</artifactId>
-                    </plugin>
+<!--                    <plugin>-->
+<!--                        <groupId>io.github.git-commit-id</groupId>-->
+<!--                        <artifactId>git-commit-id-maven-plugin</artifactId>-->
+<!--                    </plugin>-->
                 </plugins>
             </build>
             <properties>
