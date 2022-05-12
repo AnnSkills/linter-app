@@ -46,8 +46,10 @@ spring:
       hibernate.query.fail_on_pagination_over_collection_fetch: true
   liquibase:
     contexts: test
+#  mail:
+#    host: localhost
   mail:
-    host: localhost
+    host: smtp.gmail.com
   main:
     allow-bean-definition-overriding: true
     allow-circular-references: true
