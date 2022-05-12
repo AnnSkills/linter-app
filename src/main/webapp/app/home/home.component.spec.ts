@@ -26,17 +26,15 @@ describe('Home Component', () => {
     imageUrl: null,
   };
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [RouterTestingModule.withRoutes([])],
-        declarations: [HomeComponent],
-        providers: [AccountService],
-      })
-        .overrideTemplate(HomeComponent, '')
-        .compileComponents();
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [RouterTestingModule.withRoutes([])],
+      declarations: [HomeComponent],
+      providers: [AccountService],
     })
-  );
+      .overrideTemplate(HomeComponent, '')
+      .compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(HomeComponent);
@@ -59,18 +57,21 @@ describe('Home Component', () => {
       comp.ngOnInit();
 
       // THEN
+      // @ts-ignore
       expect(comp.account).toBeNull();
 
       // WHEN
       authenticationState.next(account);
 
       // THEN
+      // @ts-ignore
       expect(comp.account).toEqual(account);
 
       // WHEN
       authenticationState.next(null);
 
       // THEN
+      // @ts-ignore
       expect(comp.account).toBeNull();
     });
   });
@@ -81,6 +82,7 @@ describe('Home Component', () => {
       comp.login();
 
       // THEN
+      // @ts-ignore
       expect(mockRouter.navigate).toHaveBeenCalledWith(['/login']);
     });
   });
@@ -95,12 +97,14 @@ describe('Home Component', () => {
       comp.ngOnInit();
 
       // THEN
+      // @ts-ignore
       expect(comp.account).toBeNull();
 
       // WHEN
       authenticationState.next(account);
 
       // THEN
+      // @ts-ignore
       expect(comp.account).toEqual(account);
 
       // WHEN
@@ -108,6 +112,7 @@ describe('Home Component', () => {
       authenticationState.next(null);
 
       // THEN
+      // @ts-ignore
       expect(comp.account).toEqual(account);
     });
   });

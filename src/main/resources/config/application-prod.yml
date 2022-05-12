@@ -17,7 +17,7 @@ logging:
   level:
     ROOT: INFO
     tech.jhipster: INFO
-    com.bsuir.annapp: INFO
+    com.bsuir.annakhomyakova: INFO
 
 management:
   metrics:
@@ -33,9 +33,9 @@ spring:
       enabled: false
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://localhost:3306/linter?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/linnter
     username: root
-    password:
+    password: 12345678
     hikari:
       poolName: Hikari
       auto-commit: false
@@ -93,10 +93,14 @@ jhipster:
   http:
     cache: # Used by the CachingHttpHeadersFilter
       timeToLiveInDays: 1461
+  cache: # Cache configuration
+    ehcache: # Ehcache configuration
+      time-to-live-seconds: 3600 # By default objects stay 1 hour in the cache
+      max-entries: 1000 # Number of objects in each cache entry
   security:
     remember-me:
       # security key (this key should be unique for your application, and kept secret)
-      key: 279db2ca33b3a5bd9f5b7ece25364672e487bee38148983fa279d95ff2905538cb7ccebed16bb11d2dfe34a31536120fe787
+      key: 9556007b1caf74f44065432198751b1a1ef3a46cadc9ad7d046503b8aee42903a8b75764c5c7ae1e014ad84e0d852d6eea78
   mail: # specific JHipster mail property, for standard properties see MailProperties
     base-url: http://my-server-url-to-change # Modify according to your server's URL
   logging:

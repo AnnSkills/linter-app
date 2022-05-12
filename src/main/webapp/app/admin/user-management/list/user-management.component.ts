@@ -12,7 +12,7 @@ import { User } from '../user-management.model';
 import { UserManagementDeleteDialogComponent } from '../delete/user-management-delete-dialog.component';
 
 @Component({
-  selector: 'jhi-user-mgmt',
+  selector: 'anna-user-mgmt',
   templateUrl: './user-management.component.html',
 })
 export class UserManagementComponent implements OnInit {
@@ -42,7 +42,7 @@ export class UserManagementComponent implements OnInit {
     this.userService.update({ ...user, activated: isActivated }).subscribe(() => this.loadAll());
   }
 
-  trackIdentity(index: number, item: User): number {
+  trackIdentity(_index: number, item: User): number {
     return item.id!;
   }
 

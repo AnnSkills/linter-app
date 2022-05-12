@@ -6,7 +6,15 @@
       "home": "Главная",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
-        "main": "Сущности",
+        "main": "Доступ",
+        "file": "Исходный код",
+        "versionFile": "Версии кода",
+        "bag": "Баг-репорты",
+        "task": "Задачи",
+        "post": "Блог",
+        "rules": "Правила для анализа",
+        "support": "Поддержка",
+        "charts": "Тестирование API",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
@@ -22,11 +30,11 @@
         "main": "Администрирование",
         "userManagement": "Управление пользователями",
         "tracker": "Трекер польз.",
-        "metrics": "Метрики",
+        "metrics": "Аналитика",
         "health": "Состояние",
         "configuration": "Настройки",
         "logs": "Логи",
-        "apidocs": "API",
+        "apidocs": "Swagger API UI",
         "database": "База данных",
         "jhipster-needle-menu-add-admin-element": "JHipster will add additional menu entries here (do not translate!)"
       },
@@ -136,5 +144,9 @@
       "not.image": "Файл должен был быть изображением, но было установлено, что \"{{ fileType }}\""
     }
   },
-  "footer": "Это ваш футтер"
+  "footer": {
+    "name": "Приложение помощник программиста",
+    "desc": "Линтеры помогают приводить код к единому стилю и избегать ошибок.",
+    "anna": "Автоматизированная система оценки качества кода - Хомякова А.А. 972303"
+  }
 }
