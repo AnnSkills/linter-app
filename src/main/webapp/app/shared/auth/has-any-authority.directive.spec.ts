@@ -11,7 +11,7 @@ import { Account } from 'app/core/auth/account.model';
 import { HasAnyAuthorityDirective } from './has-any-authority.directive';
 
 @Component({
-  template: ` <div *jhiHasAnyAuthority="'ROLE_ADMIN'" #content></div> `,
+  template: ` <div *annaHasAnyAuthority="'ROLE_ADMIN'" #content></div> `,
 })
 class TestHasAnyAuthorityDirectiveComponent {
   @ViewChild('content', { static: false })
@@ -22,21 +22,19 @@ describe('HasAnyAuthorityDirective tests', () => {
   let mockAccountService: AccountService;
   const authenticationState = new Subject<Account | null>();
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [HasAnyAuthorityDirective, TestHasAnyAuthorityDirectiveComponent],
-        providers: [AccountService],
-      });
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [HasAnyAuthorityDirective, TestHasAnyAuthorityDirectiveComponent],
+      providers: [AccountService],
+    });
+  }));
 
   beforeEach(() => {
     mockAccountService = TestBed.inject(AccountService);
     mockAccountService.getAuthenticationState = jest.fn(() => authenticationState.asObservable());
   });
 
-  describe('set jhiHasAnyAuthority', () => {
+  describe('set annaHasAnyAuthority', () => {
     it('should show restricted content to user if user has required role', () => {
       // GIVEN
       mockAccountService.hasAnyAuthority = jest.fn(() => true);

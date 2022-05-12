@@ -1,9 +1,10 @@
 {
   "home": {
-    "title": "Welcome to linter application created by Anna!",
+    "title": "Service for programmers!",
     "subtitle": "This is your homepage",
     "logged": {
-      "message": "You are logged in as user \"{{username}}\"."
+      "message": "You are logged in as user \"{{username}}\".",
+      "article": "Static code analysis is the process of identifying errors and flaws in the source code of programs. Static analysis can be considered as an automated code review process. Let's focus on the code review in a little more detail.\n\nThe tasks solved by static code analysis programs can be divided into 3 categories: - Detection of errors in programs. - Recommendations for the design of the code. Some static analyzers allow you to check whether the source code complies with the company's code design standard. This means controlling the number of indents in various constructions, using spaces/tabs, and so on. - Calculation of metrics. A software metric is a measure that allows you to obtain a numerical value of a certain property of a software or its specifications. There are a large number of different metrics that can be calculated using certain tools. There are other ways to use static code analysis tools. For example, static analysis can be used as a method of monitoring and training new employees who are not yet familiar enough with the rules of programming in the company. The main advantage of static analysis is the possibility of a significant reduction in the cost of eliminating defects in the program. The earlier the error is detected, the lower the cost of correcting it. So according to the data given in McConnell's book \"Perfect Code\", correcting an error at the testing stage will cost ten times more than at the design stage (writing code):"
     },
     "question": "If you have any question on JHipster:",
     "link": {

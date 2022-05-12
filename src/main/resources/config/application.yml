@@ -41,6 +41,7 @@ management:
             'loggers',
             'prometheus',
             'threaddump',
+            'caches',
             'liquibase',
           ]
   endpoint:
@@ -59,6 +60,8 @@ management:
   info:
     git:
       mode: full
+    env:
+      enabled: true
   health:
     mail:
       enabled: false # When using the MailService, configure an SMTP server and set this to true
@@ -113,7 +116,7 @@ spring:
       hibernate.jdbc.time_zone: UTC
       hibernate.id.new_generator_mappings: true
       hibernate.connection.provider_disables_autocommit: true
-      hibernate.cache.use_second_level_cache: false
+      hibernate.cache.use_second_level_cache: true
       hibernate.cache.use_query_cache: false
       hibernate.generate_statistics: false
       # modify batch size as necessary
@@ -131,7 +134,6 @@ spring:
     basename: i18n/messages
   main:
     allow-bean-definition-overriding: true
-    allow-circular-references: true
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
@@ -162,9 +164,9 @@ springdoc:
   show-actuator: true
 
 # Properties to be exposed on the /info management endpoint
-info:
-  # Comma separated list of profiles that will trigger the ribbon to show
-  display-ribbon-on-profiles: 'dev'
+#info:
+#  # Comma separated list of profiles that will trigger the ribbon to show
+#  display-ribbon-on-profiles: 'dev'
 
 # ===================================================================
 # JHipster specific properties
@@ -183,11 +185,8 @@ jhipster:
   #   exposed-headers: "Link,X-Total-Count,X-${jhipster.clientApp.name}-alert,X-${jhipster.clientApp.name}-error,X-${jhipster.clientApp.name}-params"
   #   allow-credentials: true
   #   max-age: 1800
-
-#  mail:
-#    from: yaroshludmilanick@gmail.com
   mail:
-     from: yaroshludmilanick@gmail.com
+    from: linter@localhost
   api-docs:
     default-include-pattern: ${server.servlet.context-path:}/api/**
     management-include-pattern: ${server.servlet.context-path:}/management/**

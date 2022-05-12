@@ -1,78 +1,230 @@
+<style>
+  .image-video-wrp figure {
+    position: relative;
+    margin: 0;
+  }
+
+  .image-video-wrp figure .thumblin {
+    height: 315px;
+    object-fit: cover;
+    width: 560px;
+    border: 2px solid #000;
+    align-items: end;
+  }
+
+  .image-video-wrp figure iframe {
+    height: 265px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .play-icon-box {
+    position: absolute;
+    right: 25px;
+    bottom: -20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-color: #fff;
+    box-shadow: 0px 3px 6px #00000029;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .play-icon-box img {
+    position: relative;
+    left: 2px;
+  }
+</style>
+
+<!--<head>-->
+<!--  <title>ehf</title>-->
+<!--  <script data-require="angular.js@*" data-semver="1.3.0-beta.5" src="https://code.angularjs.org/1.3.0-beta.5/angular.js"></script>-->
+<!--  <script data-require="jquery@*" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>-->
+<!--  &lt;!&ndash;  <link rel="stylesheet" href="style.css" />&ndash;&gt;-->
+<!--  <script src="script1.js"></script>-->
+<!--</head>-->
 <div class="row">
   <div class="col-md-3">
     <span class="hipster img-fluid rounded"></span>
   </div>
 
   <div class="col-md-9">
-    <h1 class="display-4"><span jhiTranslate="home.title">Welcome to linter application created by Anna!</span></h1>
+    <h1 class="display-4"><span annaTranslate="home.title">Service for programmers!</span> (Linter)</h1>
 
-    <p class="lead" jhiTranslate="home.subtitle">This is your homepage</p>
-
+    <p class="lead" annaTranslate="home.subtitle">This is your homepage</p>
     <div [ngSwitch]="account !== null">
       <div class="alert alert-success" *ngSwitchCase="true">
-        <span id="home-logged-message" *ngIf="account" jhiTranslate="home.logged.message" [translateValues]="{ username: account.login }"
+        <span id="home-logged-message" *ngIf="account" annaTranslate="home.logged.message" [translateValues]="{ username: account.login }"
           >You are logged in as user "{{ account.login }}".</span
         >
       </div>
 
-      <div class="alert alert-warning" *ngSwitchCase="false">
-        <span jhiTranslate="global.messages.info.authenticated.prefix">If you want to </span>
-        <a class="alert-link" (click)="login()" jhiTranslate="global.messages.info.authenticated.link">sign in</a
-        ><span jhiTranslate="global.messages.info.authenticated.suffix"
+      <p annaTranslate="home.logged.article">
+        Статический анализ кода это процесс выявления ошибок и недочетов в исходном коде программ.
+        Статический анализ можно рассматривать как автоматизированный процесс обзора кода.
+        Остановимся на обзоре кода чуть подробнее.
+        Задачи, решаемые программами статического анализа кода можно разделить на 3 категории:
+        - Выявление ошибок в программах.
+        - Рекомендации по оформлению кода. Некоторые статические анализаторы позволяют проверять, соответствует ли исходный код, принятому в компании стандарту оформления кода. Имеется в виду контроль количества отступов в различных конструкциях, использование пробелов/символов табуляции и так далее.
+        - Подсчет метрик. Метрика программного обеспечения - это мера, позволяющая получить численное значение некоторого свойства программного обеспечения или его спецификаций. Существует большое количество разнообразных метрик, которые можно подсчитать, используя те ли иные инструменты.
+        Есть и другие способы использования инструментов статического анализа кода. Например, статический анализ можно использовать как метод контроля и обучения новых сотрудников, еще недостаточно знакомых с правилами программирования в компании.
+
+        Главное преимущество статического анализ состоит в возможности существенной снижении стоимости устранения дефектов в программе.
+      </p>
+
+      <!--<div class="alert alert-warning" *ngSwitchCase="false">
+        <span annaTranslate="global.messages.info.authenticated.prefix">If you want to </span>
+        <a class="alert-link" (click)="login()" annaTranslate="global.messages.info.authenticated.link">sign in</a
+        ><span annaTranslate="global.messages.info.authenticated.suffix"
           >, you can try the default accounts:<br />- Administrator (login="admin" and password="admin") <br />- User (login="user" and
-          password="user").</span
-        >
-      </div>
+          password="user").</span>
+      </div>-->
 
       <div class="alert alert-warning" *ngSwitchCase="false">
-        <span jhiTranslate="global.messages.info.register.noaccount">You don't have an account yet?</span>&nbsp;
-        <a class="alert-link" routerLink="account/register" jhiTranslate="global.messages.info.register.link">Register a new account</a>
+        <span annaTranslate="global.messages.info.register.noaccount">You don't have an account yet?</span>&nbsp;
+        <a class="alert-link" routerLink="account/register" annaTranslate="global.messages.info.register.link">Register a new account</a>
+      </div>
+      <div>
+
+        <div class="image-video-wrp">
+<!--          <iframe width="560" height="315" src="https://www.youtube.com/embed/Ud-u6tkaPsQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+<!--          <script>-->
+<!--            // 2. This code loads the IFrame Player API code asynchronously.-->
+<!--            let tag = document.createElement('script');-->
+
+<!--            tag.src = "https://www.youtube.com/iframe_api";-->
+<!--            let firstScriptTag = document.getElementsByTagName('script')[0];-->
+<!--            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);-->
+
+<!--            // 3. This function creates an <iframe> (and YouTube player)-->
+<!--            //    after the API code downloads.-->
+<!--            let player;-->
+<!--            function onYouTubeIframeAPIReady() {-->
+<!--              player = new YT.Player('player', {-->
+<!--                height: '360',-->
+<!--                width: '640',-->
+<!--                videoId: 'M7lc1UVf-VE',-->
+<!--                events: {-->
+<!--                  'onReady': onPlayerReady,-->
+<!--                  'onStateChange': onPlayerStateChange-->
+<!--                }-->
+<!--              });-->
+<!--            }-->
+
+<!--            // 4. The API will call this function when the video player is ready.-->
+<!--            function onPlayerReady(event) {-->
+<!--              event.target.playVideo();-->
+<!--            }-->
+
+<!--            // 5. The API calls this function when the player's state changes.-->
+<!--            //    The function indicates that when playing a video (state=1),-->
+<!--            //    the player should play for six seconds and then stop.-->
+<!--           let done = false;-->
+<!--            function onPlayerStateChange(event) {-->
+<!--              if (event.data == YT.PlayerState.PLAYING && !done) {-->
+<!--                setTimeout(stopVideo, 6000);-->
+<!--                done = true;-->
+<!--              }-->
+<!--            }-->
+<!--            function stopVideo() {-->
+<!--              player.stopVideo();-->
+<!--            }-->
+<!--          </script>-->
+          <figure>
+            <ng-container *ngIf="videodisabled; else videoblock">
+              <iframe
+                width="560px"
+                height="315px"
+                src="https://www.youtube.com/embed/li_9PBrcOcQ"
+                srcdoc="<style>*{padding:0;margin:0;overflow:hidden}
+    html,body{height:100%}
+    img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}
+    span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}
+    </style>
+
+    <a href=https://www.youtube.com/embed/li_9PBrcOcQ?autoplay=1>
+    <img src=../content/images/video.png alt='Demo video'>
+    <span>▶</span>
+    </a>"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                title="Demo video"
+                usemap="#infographic" class="img-fluid thumblin">
+              </iframe>
+              <map name="infographic">
+                <area shape="poly" coords="130,147,200,107,254,219,130,228"
+                      href="https://www.youtube.com/watch?v=AyNefDoyD4Y&t=1s"
+                      target="_blank" alt="HTML" />
+              </map>
+
+            </ng-container>
+            <ng-template #videoblock>
+<!--              <iframe>-->
+<!--                <youtube-player videoId="GYAB4Td62zI" ></youtube-player>-->
+<!--              </iframe>-->
+<!--&lt;!&ndash;              <iframe width="100%" height="100%" src="https://www.youtube.com/watch?v=pa4SeuwoKAc"></iframe>&ndash;&gt;-->
+            </ng-template>
+            <div class="play-icon-box">
+              <img (click)="changeImg()" [title]="play" [src]="videoIcon" alt="">
+            </div>
+          </figure>
+        </div>
+        </div>
+
       </div>
     </div>
 
-    <p jhiTranslate="home.question">If you have any question on JHipster:</p>
 
-    <ul>
-      <li>
-        <a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer" jhiTranslate="home.link.homepage"
-          >JHipster homepage</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://stackoverflow.com/tags/jhipster/info"
-          target="_blank"
-          rel="noopener noreferrer"
-          jhiTranslate="home.link.stackoverflow"
-          >JHipster on Stack Overflow</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/jhipster/generator-jhipster/issues?state=open"
-          target="_blank"
-          rel="noopener noreferrer"
-          jhiTranslate="home.link.bugtracker"
-          >JHipster bug tracker</a
-        >
-      </li>
-      <li>
-        <a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer" jhiTranslate="home.link.chat"
-          >JHipster public chat room</a
-        >
-      </li>
-      <li>
-        <a href="https://twitter.com/jhipster" target="_blank" rel="noopener noreferrer" jhiTranslate="home.link.follow"
-          >follow @jhipster on Twitter</a
-        >
-      </li>
-    </ul>
 
-    <p>
-      <span jhiTranslate="home.like">If you like JHipster, don't forget to give us a star on</span>
-      <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer" jhiTranslate="home.github"
-        >GitHub</a
-      >!
-    </p>
+<!--    <p annaTranslate="home.question">If you have any question on JHipster:</p>-->
+
+<!--    <ul>-->
+<!--      <li>-->
+<!--        <a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer" annaTranslate="home.link.homepage"-->
+<!--          >JHipster homepage</a-->
+<!--        >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--        <a-->
+<!--          href="https://stackoverflow.com/tags/jhipster/info"-->
+<!--          target="_blank"-->
+<!--          rel="noopener noreferrer"-->
+<!--          annaTranslate="home.link.stackoverflow"-->
+<!--          >JHipster on Stack Overflow</a-->
+<!--        >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--        <a-->
+<!--          href="https://github.com/jhipster/generator-jhipster/issues?state=open"-->
+<!--          target="_blank"-->
+<!--          rel="noopener noreferrer"-->
+<!--          annaTranslate="home.link.bugtracker"-->
+<!--          >JHipster bug tracker</a-->
+<!--        >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--        <a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer" annaTranslate="home.link.chat"-->
+<!--          >JHipster public chat room</a-->
+<!--        >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--        <a href="https://twitter.com/jhipster" target="_blank" rel="noopener noreferrer" annaTranslate="home.link.follow"-->
+<!--          >follow @jhipster on Twitter</a-->
+<!--        >-->
+<!--      </li>-->
+<!--    </ul>-->
+
+<!--    <p>-->
+<!--      <span annaTranslate="home.like">If you like JHipster, don't forget to give us a star on</span>-->
+<!--      <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer" annaTranslate="home.github"-->
+<!--        >GitHub</a-->
+<!--      >!-->
+<!--    </p>-->
   </div>
-</div>
+

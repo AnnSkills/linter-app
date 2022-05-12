@@ -5,7 +5,7 @@ import { Thread, ThreadState } from 'app/admin/metrics/metrics.model';
 import { MetricsModalThreadsComponent } from '../metrics-modal-threads/metrics-modal-threads.component';
 
 @Component({
-  selector: 'jhi-jvm-threads',
+  selector: 'anna-jvm-threads',
   templateUrl: './jvm-threads.component.html',
 })
 export class JvmThreadsComponent {
@@ -49,7 +49,16 @@ export class JvmThreadsComponent {
   constructor(private modalService: NgbModal) {}
 
   open(): void {
-    const modalRef = this.modalService.open(MetricsModalThreadsComponent);
-    modalRef.componentInstance.threads = this.threads;
+    // const modalRef = this.modalService.open(MetricsModalThreadsComponent);
+    // modalRef.componentInstance.threads = this.threads;
+    //toggle - не забыть
+    // let link = document.createElement('a');
+    // link.setAttribute('type', 'hidden');
+    // link.href = 'abc.net/files/test.ino';
+    // link.download = path;
+    // document.body.appendChild(link);
+    // link.click();
+    // link.remove();
+
   }
 }
