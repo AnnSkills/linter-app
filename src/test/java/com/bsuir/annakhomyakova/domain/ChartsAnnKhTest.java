@@ -2,7 +2,7 @@ package com.bsuir.annakhomyakova.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.bsuir.annakhomyakova.web.rest.TestUtil;
+import com.bsuir.annakhomyakova.withoutMocs.TestUtil;
 import org.junit.jupiter.api.Test;
 
 class ChartsAnnKhTest {

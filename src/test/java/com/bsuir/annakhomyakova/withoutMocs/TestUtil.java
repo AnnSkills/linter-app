@@ -1,27 +1,28 @@
-package com.bsuir.annakhomyakova.web.rest;
-
-import static org.assertj.core.api.Assertions.assertThat;
+package com.bsuir.annakhomyakova.withoutMocs;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import java.io.IOException;
-import java.math.BigDecimal;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeParseException;
-import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
 import org.hamcrest.Description;
 import org.hamcrest.TypeSafeDiagnosingMatcher;
 import org.hamcrest.TypeSafeMatcher;
 import org.springframework.format.datetime.standard.DateTimeFormatterRegistrar;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.format.support.FormattingConversionService;
+
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeParseException;
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 public final class TestUtil {
@@ -118,39 +119,24 @@ public final class TestUtil {
             }
         }
     }
-
-    /**
-     * Creates a matcher that matches when the examined number represents the same value as the reference BigDecimal.
-     *
-     * @param number the reference BigDecimal against which the examined number is checked.
-     */
     public static NumberMatcher sameNumber(BigDecimal number) {
         return new NumberMatcher(number);
     }
 
-    /**
-     * Verifies the equals/hashcode contract on the domain object.
-     */
     public static <T> void equalsVerifier(Class<T> clazz) throws Exception {
         T domainObject1 = clazz.getConstructor().newInstance();
         assertThat(domainObject1.toString()).isNotNull();
         assertThat(domainObject1).isEqualTo(domainObject1);
         assertThat(domainObject1).hasSameHashCodeAs(domainObject1);
-        // Test with an instance of another class
         Object testOtherObject = new Object();
         assertThat(domainObject1).isNotEqualTo(testOtherObject);
         assertThat(domainObject1).isNotEqualTo(null);
-        // Test with an instance of the same class
         T domainObject2 = clazz.getConstructor().newInstance();
         assertThat(domainObject1).isNotEqualTo(domainObject2);
-        // HashCodes are equals because the objects are not persisted yet
         assertThat(domainObject1).hasSameHashCodeAs(domainObject2);
     }
 
-    /**
-     * Create a {@link FormattingConversionService} which use ISO date format, instead of the localized one.
-     * @return the {@link FormattingConversionService}.
-     */
+
     public static FormattingConversionService createFormattingConversionService() {
         DefaultFormattingConversionService dfcs = new DefaultFormattingConversionService();
         DateTimeFormatterRegistrar registrar = new DateTimeFormatterRegistrar();
@@ -159,13 +145,6 @@ public final class TestUtil {
         return dfcs;
     }
 
-    /**
-     * Makes a an executes a query to the EntityManager finding all stored objects.
-     * @param <T> The type of objects to be searched
-     * @param em The instance of the EntityManager
-     * @param clss The class type to be searched
-     * @return A list of all found objects
-     */
     public static <T> List<T> findAll(EntityManager em, Class<T> clss) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<T> cq = cb.createQuery(clss);

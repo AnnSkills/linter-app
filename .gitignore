@@ -5,6 +5,28 @@
 /target/classes/static/**
 /src/test/javascript/coverage/
 
+.jhipster
+.idea
+.browserslistrc
+.eslintrc.json
+.eslintignore
+.husky
+tsconfig.spec.json
+tsconfig.json
+target
+sonar-project.properties
+package.json
+package-lock.json
+.editorconfig
+.lintstagedrc.js
+.yo-rc.json
+cypress-audits.json
+cypress.json
+.mvn
+angular.json
+ngsw-config.json
+jest.conf.js
+
 ######################
 # Node
 ######################
@@ -146,7 +168,8 @@ Desktop.ini
 # Maven Wrapper
 ######################
 !.mvn/wrapper/maven-wrapper.jar
-
+mvnw
+mvnw.cmd
 ######################
 # ESLint
 ######################
